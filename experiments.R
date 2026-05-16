@@ -28,6 +28,15 @@
 # Auxiliar functions
 ################################################################################
 
+rm(list=ls())
+
+library(this.path) # use relative path
+setwd(this.path::here())
+
+################################################################################
+# Auxiliar functions
+################################################################################
+
 # optimizer by golden-section algorithm
 MaxFuncGS <- function(func, ...){
   TOL = 1e-3                            
@@ -473,7 +482,7 @@ tabB2_ETI <- TabETI(r, BetaPrior, BetaPosterior, size, a[2], b[2])
 tabB3_ETI <- TabETI(r, BetaPrior, BetaPosterior, size, a[3], b[3])
 tabB4_ETI <- TabETI(r, BetaPrior, BetaPosterior, size, a[4], b[4])
 
-write.table(cbind(tabB1_ETI,tabB2_ETI,tabB3_ETI,tabB4_ETI),'tabBeta_ETI_2.txt',
+write.table(cbind(tabB1_ETI,tabB2_ETI,tabB3_ETI,tabB4_ETI),'results/tabBeta_ETI_2.txt',
           sep = '\t', quote = FALSE)
 rm(tabB1_ETI, tabB2_ETI, tabB3_ETI, tabB4_ETI)
 
@@ -482,7 +491,7 @@ tabB2_SCI <- TabSCI(DELTA, r, BetaPrior, BetaPosterior, BetaSelf, size, a[2], b[
 tabB3_SCI <- TabSCI(DELTA, r, BetaPrior, BetaPosterior, BetaSelf, size, a[3], b[3])
 tabB4_SCI <- TabSCI(DELTA, r, BetaPrior, BetaPosterior, BetaSelf, size, a[4], b[4])
 
-write.table(cbind(tabB1_SCI,tabB2_SCI,tabB3_SCI,tabB4_SCI),'tabBeta_SCI_2.txt',
+write.table(cbind(tabB1_SCI,tabB2_SCI,tabB3_SCI,tabB4_SCI),'results/tabBeta_SCI_2.txt',
             sep = '\t', quote = FALSE)
 rm(a, b, tabB1_SCI, tabB2_SCI, tabB3_SCI, tabB4_SCI)
 
@@ -497,7 +506,7 @@ tabG2_ETI <- TabETI(r, GaussHypPrior, GaussHypPosterior, size, a[2], b[2], c[2])
 tabG3_ETI <- TabETI(r, GaussHypPrior, GaussHypPosterior, size, a[3], b[3], c[3])
 tabG4_ETI <- TabETI(r, GaussHypPrior, GaussHypPosterior, size, a[4], b[4], c[4])
 
-write.table(cbind(tabG1_ETI,tabG2_ETI,tabG3_ETI,tabG4_ETI),'tabGau_ETI_2.txt',
+write.table(cbind(tabG1_ETI,tabG2_ETI,tabG3_ETI,tabG4_ETI),'results/tabGau_ETI_2.txt',
             sep = '\t', quote = FALSE)
 rm(tabG1_ETI, tabG2_ETI, tabG3_ETI, tabG4_ETI)
 
@@ -506,19 +515,19 @@ tabG2_SCI <- TabSCI(DELTA, r, GaussHypPrior, GaussHypPosterior, GaussHypSelf, si
 tabG3_SCI <- TabSCI(DELTA, r, GaussHypPrior, GaussHypPosterior, GaussHypSelf, size, a[3], b[3], c[3])
 tabG4_SCI <- TabSCI(DELTA, r, GaussHypPrior, GaussHypPosterior, GaussHypSelf, size, a[4], b[4], c[4])
 
-write.table(cbind(tabG1_SCI,tabG2_SCI,tabG3_SCI,tabG4_SCI),'tabGau_SCI_2.txt',
+write.table(cbind(tabG1_SCI,tabG2_SCI,tabG3_SCI,tabG4_SCI),'results/tabGau_SCI_2.txt',
             sep = '\t', quote = FALSE)
 rm(a, b, c, tabG1_SCI, tabG2_SCI, tabG3_SCI, tabG4_SCI)
 
 # jeffreys prior
 size <- seq(10, 250, 10)
 tabJ_ETI <- TabETI(r, JefPrior, JefPosterior, size)
-write.table(tabJ_ETI,'tabJef_ETI_2.txt', sep = '\t', quote = FALSE)
+write.table(tabJ_ETI,'results/tabJef_ETI_2.txt', sep = '\t', quote = FALSE)
 rm(tabJ_ETI)
 
 size <- seq(10, 300, 10)
 tabJ_SCI <- TabSCI(DELTA, r, JefPrior, JefPosterior, JefSelf, size)
-write.table(tabJ_SCI,'tabJef_SCI_2.txt', sep = '\t', quote = FALSE)
+write.table(tabJ_SCI,'results/tabJef_SCI_2.txt', sep = '\t', quote = FALSE)
 rm(tabJ_SCI)
 
 # r = 4 ------------------------------------------------------------------------
@@ -535,7 +544,7 @@ tabB2_ETI <- TabETI(r, BetaPrior, BetaPosterior, size, a[2], b[2])
 tabB3_ETI <- TabETI(r, BetaPrior, BetaPosterior, size, a[3], b[3])
 tabB4_ETI <- TabETI(r, BetaPrior, BetaPosterior, size, a[4], b[4])
 
-write.table(cbind(tabB1_ETI,tabB2_ETI,tabB3_ETI,tabB4_ETI),'tabBeta_ETI_4.txt',
+write.table(cbind(tabB1_ETI,tabB2_ETI,tabB3_ETI,tabB4_ETI),'results/tabBeta_ETI_4.txt',
             sep = '\t', quote = FALSE)
 rm(tabB1_ETI, tabB2_ETI, tabB3_ETI, tabB4_ETI)
 
@@ -544,7 +553,7 @@ tabB2_SCI <- TabSCI(DELTA, r, BetaPrior, BetaPosterior, BetaSelf, size, a[2], b[
 tabB3_SCI <- TabSCI(DELTA, r, BetaPrior, BetaPosterior, BetaSelf, size, a[3], b[3])
 tabB4_SCI <- TabSCI(DELTA, r, BetaPrior, BetaPosterior, BetaSelf, size, a[4], b[4])
 
-write.table(cbind(tabB1_SCI,tabB2_SCI,tabB3_SCI,tabB4_SCI),'tabBeta_SCI_4.txt',
+write.table(cbind(tabB1_SCI,tabB2_SCI,tabB3_SCI,tabB4_SCI),'results/tabBeta_SCI_4.txt',
             sep = '\t', quote = FALSE)
 rm(a, b, tabB1_SCI, tabB2_SCI, tabB3_SCI, tabB4_SCI)
 
@@ -559,7 +568,7 @@ tabG2_ETI <- TabETI(r, GaussHypPrior, GaussHypPosterior, size, a[2], b[2], c[2])
 tabG3_ETI <- TabETI(r, GaussHypPrior, GaussHypPosterior, size, a[3], b[3], c[3])
 tabG4_ETI <- TabETI(r, GaussHypPrior, GaussHypPosterior, size, a[4], b[4], c[4])
 
-write.table(cbind(tabG1_ETI,tabG2_ETI,tabG3_ETI,tabG4_ETI),'tabGau_ETI_4.txt',
+write.table(cbind(tabG1_ETI,tabG2_ETI,tabG3_ETI,tabG4_ETI),'results/tabGau_ETI_4.txt',
             sep = '\t', quote = FALSE)
 rm(tabG1_ETI, tabG2_ETI, tabG3_ETI, tabG4_ETI)
 
@@ -568,19 +577,19 @@ tabG2_SCI <- TabSCI(DELTA, r, GaussHypPrior, GaussHypPosterior, GaussHypSelf, si
 tabG3_SCI <- TabSCI(DELTA, r, GaussHypPrior, GaussHypPosterior, GaussHypSelf, size, a[3], b[3], c[3])
 tabG4_SCI <- TabSCI(DELTA, r, GaussHypPrior, GaussHypPosterior, GaussHypSelf, size, a[4], b[4], c[4])
 
-write.table(cbind(tabG1_SCI,tabG2_SCI,tabG3_SCI,tabG4_SCI),'tabGau_SCI_4.txt',
+write.table(cbind(tabG1_SCI,tabG2_SCI,tabG3_SCI,tabG4_SCI),'results/tabGau_SCI_4.txt',
             sep = '\t', quote = FALSE)
 rm(a, b, c, tabG1_SCI, tabG2_SCI, tabG3_SCI, tabG4_SCI)
 
 # jeffreys prior
 size <- seq(10, 250, 10)
 tabJ_ETI <- TabETI(r, JefPrior, JefPosterior, size)
-write.table(tabJ_ETI,'tabJef_ETI_4.txt', sep = '\t', quote = FALSE)
+write.table(tabJ_ETI,'results/tabJef_ETI_4.txt', sep = '\t', quote = FALSE)
 rm(tabJ_ETI)
 
 size <- seq(10, 250, 10)
 tabJ_SCI <- TabSCI(DELTA, r, JefPrior, JefPosterior, JefSelf, size)
-write.table(tabJ_SCI,'tabJef_SCI_4.txt', sep = '\t', quote = FALSE)
+write.table(tabJ_SCI,'results/tabJef_SCI_4.txt', sep = '\t', quote = FALSE)
 rm(tabJ_SCI)
 
 ################################################################################
@@ -649,9 +658,9 @@ rownames(matrixALC_Jeffreys) = paste0('Jeffreys')
 
 # writing results
 write.table(rbind(matrixACC_Beta,matrixACC_Gauss,matrixACC_Jeffreys),
-      file = 'TableACC_2.txt', sep = '\t', quote = FALSE, row.names = TRUE)
+      file = 'results/TableACC_2.txt', sep = '\t', quote = FALSE, row.names = TRUE)
 write.table(rbind(matrixALC_Beta,matrixALC_Gauss,matrixALC_Jeffreys),
-            file = 'TableALC_2.txt', sep = '\t', quote = FALSE, row.names = TRUE)
+            file = 'results/TableALC_2.txt', sep = '\t', quote = FALSE, row.names = TRUE)
 rm(matrixACC_Beta, matrixACC_Gauss,matrixACC_Jeffreys)
 rm(matrixALC_Beta, matrixALC_Gauss,matrixALC_Jeffreys)
 rm(r, a, b, c, DELTA, WIDTH)
@@ -717,9 +726,9 @@ rownames(matrixALC_Jeffreys) = paste0('Jeffreys')
 
 # writing results
 write.table(rbind(matrixACC_Beta,matrixACC_Gauss,matrixACC_Jeffreys),
-            file = 'TableACC_4.txt', sep = '\t', quote = FALSE, row.names = TRUE)
+            file = 'results/TableACC_4.txt', sep = '\t', quote = FALSE, row.names = TRUE)
 write.table(rbind(matrixALC_Beta,matrixALC_Gauss,matrixALC_Jeffreys),
-            file = 'TableALC_4.txt', sep = '\t', quote = FALSE, row.names = TRUE)
+            file = 'results/TableALC_4.txt', sep = '\t', quote = FALSE, row.names = TRUE)
 rm(matrixACC_Beta, matrixACC_Gauss,matrixACC_Jeffreys)
 rm(matrixALC_Beta, matrixALC_Gauss,matrixALC_Jeffreys)
 rm(r, a, b, c, DELTA, WIDTH)
