@@ -3,4 +3,5 @@
 .RData
 .Ruserdata
 .positai
-.Rproj
+*.Rproj
+.Rproj.user/
