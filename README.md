@@ -10,9 +10,7 @@ DOI: https://doi.org/10.1080/03610926.2024.2401602
 
 ## Abstract
 
-This repository provides the computational implementation supporting the numerical experiments presented in the article on Bayesian sample size determination for Erlang single-server queueing systems.
-
-The study develops a Bayesian framework for determining appropriate sample sizes in queueing inference problems, with emphasis on efficient estimation of queue performance measures.
+An essential aspect of the practical application of Erlang single-server queues is the statistical inference of their parameters, notably traffic intensity. This metric is crucial as it serves as a fundamental performance indicator, allowing the derivation of other significant measures, including the mean queue size and the expected number of customers in the system. Additionally, it provides the proportion of time the queue system is occupied. This article explores algorithms for calculating sample sizes for these estimations, based on the number of customers who arrived during service periods, a highly intuitive approach, allowing data collection without concerns about correlations among data points. For this purpose, we have considered two forms of informative priors: Gauss hypergeometric and beta priors. Additionally, a non conjugate and objective prior, known as Jeffreys prior, has been taken into account. We present tables with sample sizes for specific configurations and abacuses for more general configurations obtainable through approximate interpolations.
 
 ## Repository Structure
 
